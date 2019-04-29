@@ -15,13 +15,11 @@
       <Using Namespace="System.Reflection" />
       <Using Namespace="System.IO" />
       <Using Namespace="System.IO.Compression" />
+	  <Using Namespace="System.Collections.Generic" />
+	  <Using Namespace="Microsoft.Win32" />
 
       <Code Type="Fragment" Language="cs">
         <![CDATA[
-			using System;
-			using System.IO;
-			using System.Collections.Generic;
-			using Microsoft.Win32;
 			List<string> EvidenceOfSandbox = new List<string>();
 
 			List<string> sandboxStrings = new List<string> {"vmware", "virtualbox", "vbox", "qemu", "xen"};
